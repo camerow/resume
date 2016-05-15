@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
+    "build": "webpack",
     "start": "webpack --display-error-details && webpack-dev-server"
+  },
+  "engines": {
+    "node": "5.9.0"
   },
   "author": "Will Cameron",
   "license": "ISC",
