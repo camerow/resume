@@ -1,11 +1,10 @@
 /* jshint esnext:true */
-import React from "react";
-import BackgroundImageHeader from "./BackgroundImageHeader";
-import FloatingNav from "./FloatingNav";
-// require("../public/styles/normalize.css");
+import React, { Component } from "react";
+import { careers } from "../resume";
+import RevealPanel from "./RevealPanel";
+import ResumeItem from "./ResumeItem";
 require("../public/styles/app.css");
 require("../public/styles/foundation.min.css");
-import { careers } from "../resume";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,14 +19,27 @@ class App extends React.Component {
           <div className="row medium-unstack align-justify">
 
             <div className="medium-5 columns align-self-top">
-              <h1 className="">Will Cameron</h1>
+              <h1 className="pop-orange" style={{marginBottom: 0}}>Will Cameron</h1>
               <h4>Full-Stack Developer</h4>
+              <h4 style={{marginTop:"20px"}}>Strengths:</h4>
+              <ul>
+                <li>Javascript (React.js, Node)</li>
+                <li>Webpack, Gulp, Grunt</li>
+                <li>NoSQL Databases <br></br> (Rethink, Mongo, Firebase)</li>
+                <li>SASS/CSS</li>
+                <li>Git</li>
+              </ul>
+              <h4 style={{marginTop:"20px"}}>Learning:</h4>
+              <ul>
+                <li>Relational Databasees</li>
+                <li>Elm, Elixir</li>
+                <li>Docker/Deployment</li>
+              </ul>
+
             </div>
-            <ResumeItem
-              toggle={(e) => this.setState({ show: !this.state.show })}
-              showDetails={this.state.show}
-              {...careers}
-              />
+            <RevealPanel title={careers.category}>
+              <ResumeItem {...careers} />
+            </RevealPanel>
 
           </div>
         <div style={{minHeight: "800px"}}></div>
@@ -37,45 +49,6 @@ class App extends React.Component {
   }
 }
 
-const ResumeItem = (props) => {
-  const { category, details, toggle, showDetails } = props;
 
-  return (
-    <div className="medium-7 columns">
-      <div style={{justifyContent: "space-between"}} onClick={toggle} className="row row-divider">
-        <h2>{category}</h2>
-        <div className={"down-arrow" + (showDetails ? " rec " : "")}></div>
-      </div>
-      { showDetails ?
-        details.map((detail, i) => {
-          const { company, location, title, startDate, endDate, roles} = detail;
-
-          return (
-            <div key={i} className="row">
-              <div className="medium-4 columns">
-                <h3>{company}</h3>
-                <p>{location}</p>
-                <p>{`${startDate} - ${endDate}`}</p>
-
-              </div>
-              <div className="medium-8 columns">
-                <h4>{title}</h4>
-                <ul style={{listStyle: "none"}}>
-                  {
-                    roles.map((role) => <li>{role}</li>)
-                  }
-                </ul>
-              </div>
-            </div>
-          )
-        })
-        :
-        null
-      }
-
-
-    </div>
-  )
-}
 
 export default App;

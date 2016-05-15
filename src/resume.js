@@ -1,5 +1,5 @@
 const careers = {
-  category: "Careers",
+  category: "Professional Experience",
   details: [
     {
       company: "Zipwhp",
@@ -8,10 +8,11 @@ const careers = {
       endDate: "Present",
       title: "Junior Front End Engineer",
       roles: [
-        "Create web apps for both internal tools and client facing SMS/MMS.",
-        "Build distributed apps for major corporate partners.",
-        "Create tooling / build documentation for each app (webpack, grunt, gulp)",
-        "Back end services using Node (express/hapi) to connect multiple databases/apis for consumption by front-end"
+        "Write customer-facing and internal Javascript applications for SMS/MMS, account dashboard.",
+        "Develop RESTFUL Node.js services for distributed applications.",
+        "Maintain legacy Ext.js code for ARIA accessibility standards.",
+        "Create and maintain build tooling and documentation.",
+        "Attend daily standups and use SCRUM methodologies."
       ]
     },
     {
@@ -23,7 +24,7 @@ const careers = {
       roles: [
         "Rebuild corporate website, both from server side and client pages.",
         "Implement new hubspot integrations.",
-        "Work with Senior devs to find suitable challenges and learning opportunities.",
+        "Work with Senior developers to find new challenges and learning opportunities.",
       ]
     }
   ]
