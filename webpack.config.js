@@ -10,7 +10,7 @@ var AppEntry = process.env.NODE_ENV === 'production' ?
   [ "webpack-dev-server/client?http://localhost:8080",
   "webpack/hot/only-dev-server",
   "./src/main.jsx" ];
-
+console.log("node env", process.env.NODE_ENV);
 var config = {
   entry: {
     app: AppEntry

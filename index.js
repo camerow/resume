@@ -20,18 +20,18 @@ server.register(Inert, () => {});
 //   path: '/{param*}',
 //   handler: {
 //     directory: {
-//         path: '.',
-//         redirectToSlash: true,
-//         index: true
+//       path: '.',
+//       redirectToSlash: true,
+//       index: true
 //     }
 //   }
 // });
 server.route([{
         method: 'GET',
-        path: '/',
+        path: '/404',
         handler: function (request, reply) {
 
-            reply('Welcome home!');
+            reply("Will's sad error page.");
         }
     }, {
         method: 'GET',
@@ -39,25 +39,27 @@ server.route([{
         handler: {
             directory: {
                 path: '.',
-                redirectToSlash: false,
+                redirectToSlash: true,
                 index: true
             }
         }
     }
 ]);
-server.ext('onPreResponse', function (request, reply) {
-
-    if (request.response.isBoom) {
-        // Inspect the response here, perhaps see if it's a 404?
-        return reply.redirect('/');
-    }
-
-    return reply.continue();
-});
+// server.ext('onPreResponse', function (request, reply) {
+//
+//     if (request.response.isBoom) {
+//       console.log("Resp:", request.response);
+//         // Inspect the response here, perhaps see if it's a 404?
+//         return reply.redirect('/404');
+//     }
+//
+//     return reply.continue();
+// });
 server.start((err) => {
   if (err) {
     throw err;
   }
 
   console.log('Server running at:', server.info.uri);
+  console.log('Serving files from ', Path.join(__dirname, 'build'));
 });
