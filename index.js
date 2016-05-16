@@ -1,32 +1,37 @@
+const Path = require('path');
 const Hapi = require('hapi');
-const path = require('path');
-const server = new Hapi.Server();
+const Inert = require('inert');
+
+const server = new Hapi.Server({
+  connections: {
+    routes: {
+      files: {
+        relativeTo: Path.join(__dirname, 'build')
+      }
+    }
+  }
+});
 
 server.connection({ port: 3000 });
 
-server.register(require('inert'), (err) => {
+server.register(Inert, () => {});
 
+server.route({
+  method: 'GET',
+  path: '/{param*}',
+  handler: {
+    directory: {
+        path: '.',
+        redirectToSlash: true,
+        index: true
+    }
+  }
+});
+
+server.start((err) => {
   if (err) {
     throw err;
   }
 
-  server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-      directory: {
-        path: './build'
-      }
-    }
-  });
-
-
-  server.start((err) => {
-
-    if (err) {
-      throw err;
-    }
-
-    console.log('Server running at:', server.info.uri);
-  });
+  console.log('Server running at:', server.info.uri);
 });
