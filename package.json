@@ -1,7 +1,7 @@
 {
   "name": "web-resume",
   "version": "0.0.1",
-  "description": "Widget that tracks percentage of truthful/false statements by political party",
+  "description": "My resume",
   "main": "index.js",
   "scripts": {
     "test": "test",
@@ -36,7 +36,9 @@
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.9"
+  },
   "keywords": [
     "resume",
     "react"

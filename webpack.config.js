@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var path = require("path");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 var OUTPUT_DIR = "./build";
 
@@ -42,6 +43,9 @@ var config = {
       title: "Will Cameron Resume",
       template: "src/index.html",
       inject: "body"
+    }),
+    new CleanWebpackPlugin(['dist', 'build'], {
+      verbose: true
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()

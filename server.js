@@ -1,6 +1,7 @@
 const Hapi = require('hapi');
-
+const path = require('path');
 const server = new Hapi.Server();
+
 server.connection({ port: 3000 });
 
 server.register(require('inert'), (err) => {
@@ -14,7 +15,7 @@ server.register(require('inert'), (err) => {
     path: '/{param*}',
     handler: {
       directory: {
-        path: './build'
+        path: 'build'
       }
     }
   });
