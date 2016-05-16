@@ -7,11 +7,12 @@ const server = new Hapi.Server({
   connections: {
     routes: {
       files: {
-        relativeTo: Path.join(__dirname, 'build')
+        relativeTo: Path.resolve(Path.join(__dirname, 'build'))
       }
     }
   }
 });
+
 server.connection({ port: process.env.PORT || 3000 });
 
 server.register(Inert, () => {});
@@ -46,6 +47,7 @@ server.route([{
         }
     }
 ]);
+
 server.ext('onPreResponse', function (request, reply) {
 
     if (request.response.isBoom) {
@@ -56,11 +58,12 @@ server.ext('onPreResponse', function (request, reply) {
 
     return reply.continue();
 });
+
 server.start((err) => {
   if (err) {
+    console.error("ERROR: ", err);
     throw err;
   }
 
   console.log('Server running at:', server.info.uri);
-  console.log('Serving files from ', Path.join(__dirname, 'build'), "file tree is", fs.readdirSync('build'));
 });
