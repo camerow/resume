@@ -4,10 +4,11 @@
   "description": "My resume",
   "main": "index.js",
   "scripts": {
+    "start": "webpack && NODE_ENV=production node index.js",
     "test": "test",
     "build": "webpack",
     "dev": "webpack --display-error-details && webpack-dev-server",
-    "start": "webpack && NODE_ENV=production node index.js"
+    "postinstall": "webpack"
   },
   "engines": {
     "node": "5.9.0"
