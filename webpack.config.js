@@ -4,14 +4,16 @@ var path = require("path");
 var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 var OUTPUT_DIR = "./build";
+var AppEntry = process.env.NODE_ENV === 'production' ?
+  [ "./src/main.jsx" ]
+  :
+  [ "webpack-dev-server/client?http://localhost:8080",
+  "webpack/hot/only-dev-server",
+  "./src/main.jsx" ];
 
 var config = {
   entry: {
-    app: [
-      "webpack-dev-server/client?http://localhost:8080",
-      "webpack/hot/only-dev-server",
-      "./src/main.jsx"
-    ]
+    app: appEntry
   },
   output: {
     path: OUTPUT_DIR,
