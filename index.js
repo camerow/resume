@@ -1,6 +1,7 @@
 const Path = require('path');
 const Hapi = require('hapi');
 const Inert = require('inert');
+const fs = require('fs');
 
 const server = new Hapi.Server({
   connections: {
@@ -45,21 +46,21 @@ server.route([{
         }
     }
 ]);
-// server.ext('onPreResponse', function (request, reply) {
-//
-//     if (request.response.isBoom) {
-//       console.log("Resp:", request.response);
-//         // Inspect the response here, perhaps see if it's a 404?
-//         return reply.redirect('/404');
-//     }
-//
-//     return reply.continue();
-// });
+server.ext('onPreResponse', function (request, reply) {
+
+    if (request.response.isBoom) {
+      console.log("Resp:", request.response);
+        // Inspect the response here, perhaps see if it's a 404?
+        return reply.redirect('/404');
+    }
+
+    return reply.continue();
+});
 server.start((err) => {
   if (err) {
     throw err;
   }
 
   console.log('Server running at:', server.info.uri);
-  console.log('Serving files from ', Path.join(__dirname, 'build'));
+  console.log('Serving files from ', Path.join(__dirname, 'build'), "file tree is", fs.readdirSync('build'));
 });

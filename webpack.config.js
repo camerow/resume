@@ -46,7 +46,7 @@ var config = {
       template: "src/index.html",
       inject: "body"
     }),
-    new CleanWebpackPlugin(['dist', 'build'], {
+    new CleanWebpackPlugin(['build'], {
       verbose: true
     }),
     new webpack.HotModuleReplacementPlugin(),
