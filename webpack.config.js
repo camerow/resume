@@ -13,7 +13,7 @@ var AppEntry = process.env.NODE_ENV === 'production' ?
 
 var config = {
   entry: {
-    app: appEntry
+    app: AppEntry
   },
   output: {
     path: OUTPUT_DIR,
