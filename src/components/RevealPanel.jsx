@@ -11,9 +11,9 @@ class RevealPanel extends Component {
     const { title } = this.props;
     const { visible } = this.state;
     return (
-      <div className="medium-7 columns">
+      <div className="columns">
         <div
-          style={{justifyContent: "space-between"}}
+          style={{justifyContent: "space-between", cursor: "pointer"}}
           onClick={(e) => { this.setState({ visible: !visible })}}
           className="row row-divider">
 

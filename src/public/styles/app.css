@@ -1,3 +1,12 @@
+body {
+  height: auto;
+  background: #dcd9cd !important;
+  color: #3b444b !important;
+}
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+}
 ul {
   padding: 0 !important;
   list-style: none;
@@ -10,11 +19,6 @@ li.resume-item {
 }
 .pop-orange {
   color: #E8A13F;
-}
-body {
-  /*margin: auto;*/
-  background: #dcd9cd !important;
-  color: #3b444b !important;
 }
 .row-divider {
   border-bottom: solid 1px #3b444b;
@@ -42,7 +46,10 @@ body {
 .row {
   margin-top: 30px;
 }
-h1, h2, h3, h4, h5, p {
-  margin: 0;
-  font-family: 'Oswald', sans-serif;
+footer {
+  text-align: center;
+  padding-bottom: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

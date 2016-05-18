@@ -28,6 +28,9 @@ var config = {
         loader: "react-hot!babel?presets[]=es2015,presets[]=react",
         exclude: /node_modules/
       },
+      { test: /\.json?$/,
+        loader: "json"
+      },
       { test: /\.css$/, loader: "style!css" },
       { test: /\.scss$/, loader: "style!css!sass" },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
