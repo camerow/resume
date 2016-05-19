@@ -75,7 +75,7 @@ class App extends React.Component {
           </div>
 
         </div>
-        <div style={{textAlign:"center"}} className="row text-center">
+        <div style={{justifyContent:"center"}} className="row text-center">
             <ReactMarkdown source={"Built in React.js with easy ```$git push``` to Docker on DigitalOcean."} />
         </div>
     </div>
