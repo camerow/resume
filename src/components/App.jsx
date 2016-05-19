@@ -4,7 +4,6 @@ import { careers, about, education } from "../resume";
 import RevealPanel from "./RevealPanel";
 import ResumeItem from "./ResumeItem";
 import ReactMarkdown from "react-markdown";
-
 require("../public/styles/app.css");
 require("../public/styles/foundation.min.css");
 let profile = require("../public/img/profile.jpg");
@@ -18,9 +17,9 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="row medium-unstack align-justify">
-          <div className="medium-5 columns align-self-top">
+      <div className="column row">
+        <div style={{minHeight: "500px"}} className="row medium-unstack">
+          <div style={{marginTop: "1vh"}} className="medium-5 columns">
             <img
               style={{
                 width: '50%',
@@ -31,10 +30,13 @@ class App extends React.Component {
               Will Cameron
             </h1>
             <h4>Full-Stack Developer</h4>
+            <a href="mailto:cameron.will@gmail.com" target="_top">cameron.will@gmail.com</a>
+            <br/>
+            <a href="http://zwt.co/sms?t=3608011453&body=Hey%20Will%21">(360) 801-1453</a>
           </div>
 
           <div className="columns">
-            <RevealPanel title={"About"}>
+            <RevealPanel defaultVisible title={"About"}>
               <div className="row">{about}</div>
             </RevealPanel>
             <RevealPanel title={"Education"}>
@@ -71,9 +73,9 @@ class App extends React.Component {
           </div>
 
         </div>
-      <footer>
-        <ReactMarkdown source={"Built in React.js with easy `$git push` to Docker on DigitalOcean."} />
-      </footer>
+        <div style={{textAlign:"center"}} className="row text-center">
+            <ReactMarkdown source={"Built in React.js with easy ```$git push``` to Docker on DigitalOcean."} />
+        </div>
     </div>
 
     );

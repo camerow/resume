@@ -33,6 +33,7 @@ var config = {
       },
       { test: /\.css$/, loader: "style!css" },
       { test: /\.scss$/, loader: "style!css!sass" },
+      { test: /\.svg$/, loader: "babel!react-svg" },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ]
   },

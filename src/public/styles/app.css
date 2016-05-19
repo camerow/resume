@@ -53,3 +53,13 @@ footer {
   bottom: 0;
   width: 100%;
 }
+a {
+  text-decoration: none;
+  color: #3b444b;
+}
+a:hover {
+  color: #E8A13F;
+}
+a:visited {
+  color: #E8A13F;
+}

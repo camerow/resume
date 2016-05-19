@@ -8,7 +8,7 @@
     "test": "test",
     "build": "webpack",
     "dev": "webpack --display-error-details && webpack-dev-server",
-    "postinstall": "webpack"
+    "postinstall": "node_modules/webpack/bin/webpack.js"
   },
   "engines": {
     "node": "5.9.0"
@@ -36,6 +36,7 @@
     "react-markdown": "^2.2.0",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "svg-inline-loader": "^0.4.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"

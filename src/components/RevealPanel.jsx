@@ -4,7 +4,7 @@ class RevealPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false
+      visible: this.props.defaultVisible || false
     }
   }
   render() {
