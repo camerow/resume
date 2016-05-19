@@ -4,9 +4,13 @@ import { careers, about, education } from "../resume";
 import RevealPanel from "./RevealPanel";
 import ResumeItem from "./ResumeItem";
 import ReactMarkdown from "react-markdown";
+const profile = require("../public/img/profile.jpg");
+const linkedinLogo =  require("../public/img/linkedin-logo.png");
+const soLogo =  require("../public/img/so-icon.png");
+const githubLogo = require("../public/img/github-logo.png");
+
 require("../public/styles/app.css");
 require("../public/styles/foundation.min.css");
-let profile = require("../public/img/profile.jpg");
 
 class App extends React.Component {
   constructor(props) {
@@ -35,6 +39,19 @@ class App extends React.Component {
             <br/>
             <a href="http://zwt.co/sms?t=3608011453&body=Hey%20Will%21">(360) 801-1453</a>
             <br/>
+            <div className="row" style={{marginTop:0}}>
+              <div className="columns">
+                <a href="http://github.com/camerow" target="_blank">
+                  <img style={{width:"15px", height:"auto", marginRight:"10px"}} src={githubLogo}></img>
+                </a>
+                <a href="https://www.linkedin.com/in/will-cameron-81b71141?trk=nav_responsive_tab_profile_pic" target="_blank">
+                  <img style={{width:"18px", height:"auto", marginRight:"6px"}} src={linkedinLogo}></img>
+                </a>
+                <a href="http://stackoverflow.com/users/2312829/camerow" target="_blank">
+                  <img style={{width:"20px", height:"auto"}} src={soLogo}></img>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="columns">
