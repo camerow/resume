@@ -30,9 +30,11 @@ class App extends React.Component {
               Will Cameron
             </h1>
             <h4>Full-Stack Developer</h4>
+            <p>Seattle, WA</p>
             <a href="mailto:cameron.will@gmail.com" target="_top">cameron.will@gmail.com</a>
             <br/>
             <a href="http://zwt.co/sms?t=3608011453&body=Hey%20Will%21">(360) 801-1453</a>
+            <br/>
           </div>
 
           <div className="columns">
