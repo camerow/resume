@@ -58,9 +58,11 @@ class App extends React.Component {
             <RevealPanel defaultVisible title={"About"}>
               <div className="row">{about}</div>
             </RevealPanel>
-            <RevealPanel title={"Education"}>
-              <ResumeItem {...education} />
+
+            <RevealPanel title={careers.category}>
+              <ResumeItem {...careers} />
             </RevealPanel>
+
             <RevealPanel title={"Highlights"}>
               <div className="row">
                 <div style={{paddingLeft: 0}} className="medium-6 columns">
@@ -85,13 +87,14 @@ class App extends React.Component {
                 </div>
               </div>
             </RevealPanel>
-            <RevealPanel title={careers.category}>
-              <ResumeItem {...careers} />
+
+            <RevealPanel title={"Education"}>
+              <ResumeItem {...education} />
             </RevealPanel>
-
+            
           </div>
-
         </div>
+
         <div style={{justifyContent:"center"}} className="row text-center">
             <ReactMarkdown source={"Built in React.js with easy ```$git push``` to Docker on DigitalOcean."} />
         </div>
